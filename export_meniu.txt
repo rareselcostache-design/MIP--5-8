@@ -1,0 +1,16 @@
+=== MENIU RESTAURANT ===
+Nume: La Andrei
+TVA: 9.0%
+Versiune: 1.0
+
+- Pizza Margherita - 45.0 RON - Gramaj: 450g [Fel Principal]
+- Paste Carbonara - 52.5 RON - Gramaj: 400g [Fel Principal]
+- Limonada - 15.0 RON - Volum: 400ml [Băuturi Răcoritoare]
+- Apa Plata - 8.0 RON - Volum: 500ml [Băuturi Răcoritoare]
+- Tiramisu - 22.0 RON - Gramaj: 150g [Desert]
+- Cheesecake - 28.0 RON - Gramaj: 180g [Desert]
+- Bruschete - 18.0 RON - Gramaj: 200g [Aperitive]
+- Vin Rosu - 25.0 RON - Volum: 250ml [Băuturi Alcoolice]
+- Bere - 12.0 RON - Volum: 500ml [Băuturi Alcoolice]
+
+=== Export generat automat ===

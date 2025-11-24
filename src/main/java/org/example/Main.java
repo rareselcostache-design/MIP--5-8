@@ -5,24 +5,29 @@ import org.example.command.Comanda;
 
 public class Main {
     public static void main(String[] args) {
-        MeniuService meniuService = new MeniuService();
+        System.out.println("=== ITERAȚIA 4 - CONFIGURARE EXTERNĂ ===");
+        System.out.println("🏪 " + ConfigManager.getNumeRestaurant());
+        System.out.println("📊 TVA: " + (ConfigManager.getTva() * 100) + "%");
+        System.out.println("🔢 Versiune: " + ConfigManager.getConfig().getVersiune());
 
-        // Iterația 1 & 2
+        MeniuService meniuService = new MeniuService();
         meniuService.afisareMeniuComplet();
 
-        // Iterația 3
-        meniuService.afiseazaInterogariComplexe();
-
-        // Căutări
-        meniuService.cautaProdus("Pizza Margherita");
-        meniuService.cautaProdus("Produs Inexistent");
-
-        // Test comandă
+        // Test comandă cu TVA din config
         Comanda comanda = new Comanda();
         comanda.adaugaProdus(meniuService.gasesteProdusDupaNume("Pizza Margherita"), 2);
         comanda.adaugaProdus(meniuService.gasesteProdusDupaNume("Limonada"), 1);
         comanda.afiseazaComanda();
 
-        System.out.println("\n🎉 Iterația 3 completă și FUNCȚIONALĂ!");
+        // Export meniu
+        System.out.println("\n=== EXPORT MENIU ===");
+        StringBuilder exportContent = new StringBuilder();
+        meniuService.getProduse().forEach(produs ->
+                exportContent.append("- ").append(produs).append("\n")
+        );
+
+        FileExporter.exportaMeniu(exportContent.toString());
+
+        System.out.println("\n🎉 Iterația 4 completă!");
     }
 }
