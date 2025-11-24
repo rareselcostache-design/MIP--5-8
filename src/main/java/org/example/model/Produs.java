@@ -16,12 +16,6 @@ public abstract class Produs {
         return nume + " - " + pret + " RON - " + getDetaliiSpecifice();
     }
 
-    // Getteri pentru viitoarele iterații
-    public String getNume() {
-        return nume;
-    }
-
-    public double getPret() {
-        return pret;
-    }
+    public String getNume() { return nume; }
+    public double getPret() { return pret; }
 }

@@ -20,6 +20,8 @@ public class MeniuService {
         produse.add(new Mancare("Paste Carbonara", 52.5, 400));
         produse.add(new Bautura("Limonada", 15.0, 400));
         produse.add(new Bautura("Apa Plata", 8.0, 500));
+        // Adăugăm și o băutură alcoolică pentru testare Happy Hour
+        produse.add(new Bautura("Vin Rosu", 25.0, 250));
     }
 
     public void afisareMeniu() {
@@ -30,8 +32,14 @@ public class MeniuService {
         System.out.println("---");
     }
 
-    // Pentru viitoarele iterații
     public List<Produs> getProduse() {
         return new ArrayList<>(produse);
+    }
+
+    public Produs gasesteProdusDupaNume(String nume) {
+        return produse.stream()
+                .filter(p -> p.getNume().equalsIgnoreCase(nume))
+                .findFirst()
+                .orElse(null);
     }
 }
