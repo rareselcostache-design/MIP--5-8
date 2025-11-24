@@ -1,19 +1,15 @@
 package org.example.model;
 
-public class Bautura extends Produs {
+public final class Bautura extends Produs {
     private int volum;
 
-    public Bautura(String nume, double pret, int volum) {
-        super(nume, pret);
+    public Bautura(String nume, double pret, Categorie categorie, boolean vegetarian, int volum) {
+        super(nume, pret, categorie, vegetarian);
         this.volum = volum;
     }
 
     @Override
     public String getDetaliiSpecifice() {
         return "Volum: " + volum + "ml";
-    }
-
-    public int getVolum() {
-        return volum;
     }
 }
