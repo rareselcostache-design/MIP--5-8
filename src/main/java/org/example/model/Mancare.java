@@ -1,7 +1,15 @@
 package org.example.model;
 
-public final class Mancare extends Produs {
+import jakarta.persistence.*;
+
+@Entity
+@DiscriminatorValue("MANCARE")
+public class Mancare extends Produs {
+
+    @Column(name = "gramaj")
     private int gramaj;
+
+    public Mancare() {}
 
     public Mancare(String nume, double pret, Categorie categorie, boolean vegetarian, int gramaj) {
         super(nume, pret, categorie, vegetarian);
@@ -12,4 +20,7 @@ public final class Mancare extends Produs {
     public String getDetaliiSpecifice() {
         return "Gramaj: " + gramaj + "g";
     }
+
+    public int getGramaj() { return gramaj; }
+    public void setGramaj(int gramaj) { this.gramaj = gramaj; }
 }

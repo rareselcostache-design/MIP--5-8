@@ -1,7 +1,15 @@
 package org.example.model;
 
-public final class Bautura extends Produs {
+import jakarta.persistence.*;
+
+@Entity
+@DiscriminatorValue("BAUTURA")
+public class Bautura extends Produs {
+
+    @Column(name = "volum")
     private int volum;
+
+    public Bautura() {}
 
     public Bautura(String nume, double pret, Categorie categorie, boolean vegetarian, int volum) {
         super(nume, pret, categorie, vegetarian);
@@ -12,4 +20,7 @@ public final class Bautura extends Produs {
     public String getDetaliiSpecifice() {
         return "Volum: " + volum + "ml";
     }
+
+    public int getVolum() { return volum; }
+    public void setVolum(int volum) { this.volum = volum; }
 }
